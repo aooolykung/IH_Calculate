@@ -31,9 +31,10 @@ function calculate() {
     const finalResult = Math.round(numPlates);
   
     if (finalResult < 0) {
-      document.getElementById("result").innerText = "ไม่สามารถคำนวณได้: ค่าที่ได้ต่ำกว่าค่ามาตรฐาน";
-      document.getElementById("luH").innerText = "-";
-      document.getElementById("80perL").innerText = "-";
+      document.getElementById("result").innerText = 
+      "ค่าที่ได้ต่ำกว่าค่ามาตรฐาน " + finalResult + " mm (" + numPlates.toFixed(2) + " mm)" ;
+      document.getElementById("luH").innerText = "ค่า L : " + L_uH.toFixed(3) + " uH";
+      document.getElementById("80perL").innerText = "L 80% : " + L1.toFixed(3) + " uH";
       return;
     }
   
