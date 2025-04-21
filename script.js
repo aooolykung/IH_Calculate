@@ -12,13 +12,13 @@ function calculate() {
     const L_H = 1 / (Math.pow(2 * Math.PI * f_Hz, 2) * C);
     const L_uH = L_H * 1e6;
   
-    const L1 = L_uH * 0.8;
+    const L1 = L_uH * 0.85;
   
     let modelL = 0;
     let divider = 0;
   
     if (model === "1") {
-      modelL = 23.748;
+      modelL = 27.720;
       divider = 0.411;
     } else if (model === "2") {
       modelL = 21.414;
@@ -26,7 +26,7 @@ function calculate() {
     }
   
     const difference = L1 - modelL;
-    const numPlates = difference * divider;
+    const numPlates = difference / divider;
   
     const finalResult = Math.round(numPlates);
   
@@ -42,6 +42,6 @@ function calculate() {
     document.getElementById("luH").innerText =
       "ค่า L : " + L_uH.toFixed(3) + " uH";
     document.getElementById("80perL").innerText =
-      "L 80% : " + L1.toFixed(3) + " uH";
+      "L 85% : " + L1.toFixed(3) + " uH";
   }
   
