@@ -4,6 +4,7 @@ function calculate() {
   
     if (isNaN(f_kHz) || f_kHz <= 0) {
       document.getElementById("result").innerText = "กรุณากรอกความถี่ให้ถูกต้อง";
+      document.getElementById('result1').innerText = "-";
       return;
     }
   
@@ -27,22 +28,30 @@ function calculate() {
   
     const difference = L1 - modelL;
     const numPlates = difference / divider;
+
+    const difference1 = L_uH - modelL;
+    const numPlates1 = difference1 / divider;
   
     const finalResult = Math.round(numPlates);
+    const finalResult1 = Math.round(numPlates1);
   
     if (finalResult < 0) {
       document.getElementById("result").innerText = 
-      "ค่าที่ได้ต่ำกว่าค่ามาตรฐาน " + finalResult + " mm (" + numPlates.toFixed(2) + " mm)" ;
-      document.getElementById("luH").innerText = "ค่า L : " + L_uH.toFixed(3) + " uH";
-      document.getElementById("80perL").innerText = "L 80% : " + L1.toFixed(3) + " uH";
+      "ค่าที่ 85% : ค่าที่ได้ต่ำกว่าค่ามาตรฐาน " + finalResult + " mm (" + numPlates.toFixed(2) + " mm)" ;
+      document.getElementById("result1").innerText = 
+      "ค่าที่ 100% : " + finalResult1 + " mm (" + numPlates1.toFixed(2) + " mm)";
+      document.getElementById("80perL").innerText = "ค่า L 85% : " + L1.toFixed(3) + " uH";
+      document.getElementById("luH").innerText = "ค่า L 100% : " + L_uH.toFixed(3) + " uH";
       return;
     }
   
     document.getElementById("result").innerText =
-      finalResult + " mm (" + numPlates.toFixed(2) + " mm)";
-    document.getElementById("luH").innerText =
-      "ค่า L : " + L_uH.toFixed(3) + " uH";
+      "ค่าที่ 85% : " + finalResult + " mm (" + numPlates.toFixed(2) + " mm)";
+    document.getElementById("result1").innerText = 
+      "ค่าที่ 100% : " + finalResult1 + " mm (" + numPlates1.toFixed(2) + " mm)";
     document.getElementById("80perL").innerText =
-      "L 85% : " + L1.toFixed(3) + " uH";
+      "ค่า L 85% : " + L1.toFixed(3) + " uH";
+    document.getElementById("luH").innerText =
+      "ค่า L 100% : " + L_uH.toFixed(3) + " uH";
   }
   

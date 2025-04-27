@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>คำนวณจำนวนแผ่นรองหม้อIH</title>
+  <title>ServiceEngineering Help</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>คำนวณจำนวนแผ่นรองหม้อ IH</h1>
+  <h1>คำนวณความสูงแผนรองหม้อ IH</h1>
     <label>อยู่ระหว่างการพัฒนาค่าอาจมีการคาดเคลื่อน</label>
-    <label>จากค่า L ที่ไม่เท่ากัน</label>
   <h1></h1>
 
-  <label for="model">เลือกรุ่น:</label>
+  <label for="model">เลือกรุ่น เครื่องจักร:</label>
   <select id="model">
     <option value="1">รุ่น IH30A (27.720 μH)</option>
     <option value="2">รุ่น IH30AS ขึ้นข้าง (21.414 μH)</option>
   </select>
 
-  <label for="freq">ความถี่ F (kHz):</label>
+  <label for="freq">ความถี่จากกล่อง F (kHz):</label>
   <input type="number" id="freq" step="any" placeholder="ใส่ค่าความถี่ เช่น 21.5" />
 
   <!-- ปุ่มอยู่ใต้ input -->
@@ -26,13 +25,25 @@
     <button onclick="calculate()">คำนวณ</button>
   </div>
 
-  <h3>ระยะของแผ่นรองหม้อ:</h3>
+  <h3>ระยะของแผ่นรองหม้อ</h3>
   <div id="result">-</div>
+  <div id="result1">-</div>
 
-  <h4>ค่าที่คำนวณได้</h4>
-  <div id="luH">-</div>
+  <h4>ค่าInductanceที่คำนวณได้</h4>
   <div id="80perL">-</div>
+  <div id="luH">-</div>
+
+
+
+  <footer>
+    <p>Version A0.06 © 2025<br>
+      <p>Power By ServiceEngineering (LLK)</p>
+    <!-- <a href="wasannar@cpram.co.th">wasannar@cpram.co.th</a> -->
+    </p>
+  </footer>
+
 
   <script src="script.js"></script>
 </body>
+  
 </html>
