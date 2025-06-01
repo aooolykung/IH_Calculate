@@ -22,7 +22,7 @@ jobs:
 
     - name: Create credentials.json
       run: |
-        printf '%s' "${{ secrets.GSHEET_CREDENTIALS }}" > credentials.json
+        echo "${{ secrets.GSHEET_CREDENTIALS }}" | sed 's/\\n/\n/g' > credentials.json
 
     - name: Check credentials.json content
       run: cat credentials.json
