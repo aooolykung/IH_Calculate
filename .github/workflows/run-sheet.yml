@@ -21,7 +21,11 @@ jobs:
         pip install gspread oauth2client
 
     - name: Create credentials.json
-      run: echo "${{ secrets.GSHEET_CREDENTIALS }}" > credentials.json
+      run: |
+        printf '%s' "${{ secrets.GSHEET_CREDENTIALS }}" > credentials.json
+
+    - name: Check credentials.json content
+      run: cat credentials.json
 
     - name: Create main.py
       run: |
@@ -32,7 +36,7 @@ jobs:
         echo "    scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']" >> main.py
         echo "    creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)" >> main.py
         echo "    client = gspread.authorize(creds)" >> main.py
-        echo "    sheet = client.open_by_key('15nJVmEYntjmux4jE37VeP_5nWJTFk2t0zzMjGzCvAzk').sheet1" >> main.py
+        echo "    sheet = client.open_by_key('15nJVmEYntjmux4jE37VeP_5nWJTFk2t0zzMjGzCvAzk').get_worksheet(0)" >> main.py
         echo "    value = sheet.acell('D1016').value" >> main.py
         echo "    try:" >> main.py
         echo "        inductance = float(value) * 1e-6" >> main.py
