@@ -12,13 +12,24 @@
   <h1></h1>
 
   <label for="model">เลือกรุ่น เครื่องจักร:</label>
-  <select id="model">
-    <option value="1">รุ่น IH30A (27.720 μH)</option>
-    <option value="2">รุ่น IH30AS ขึ้นข้าง (21.414 μH)</option>
-  </select>
+  <form>
+    <div class="radio-option">
+      <input type="radio" name="choice" value="27.270" onclick="hideOther()">
+      <label for="choice1">รุ่น IH30A 27.270 μH</label>
+    </div>
+    <div class="radio-option">
+        <input type="radio" name="choice" value="25.530" onclick="hideOther()"> 
+        <label for="choice2">รุ่น IH30AS 25.530 μH</label>
+    </div>
+    <div class="radio-option">
+      <input type="radio" name="choice" value="other" onclick="showOther()"> อื่นๆ (ใส่ตัวเลขที่วัดได้จาก LCR Metter โดยไม่รองแผ่นชิม μH)
+    </div>
+    <input type="number" id="otherInput" name="otherValue" style="display:none;" placeholder="กรอกค่า L เช่น 26.390">
+  </form>
+
 
   <label for="freq">ความถี่จากกล่อง F (kHz):</label>
-  <input type="number" id="freq" step="any" placeholder="ใส่ค่าความถี่ เช่น 21.5" />
+  <input type="number" id="freq" step="any" placeholder="กรอกค่าความถี่ เช่น 21.5" />
 
   <!-- ปุ่มอยู่ใต้ input -->
   <div class="button-container">
@@ -26,6 +37,7 @@
   </div>
 
   <h3>ระยะของแผ่นรองหม้อ</h3>
+  <div id="model" class="model1"></div>
   <div id="result">-</div>
   <div id="result1">-</div>
 
@@ -36,7 +48,7 @@
 
 
   <footer>
-    <p>Version A0.06 © 2025<br>
+    <p>Version A0.08 © 2025<br>
       <p>Power By ServiceEngineering (LLK)</p>
     <!-- <a href="wasannar@cpram.co.th">wasannar@cpram.co.th</a> -->
     </p>

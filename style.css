@@ -5,13 +5,16 @@ body {
   margin: auto;
 }
 
-input, select, button {
+/* ใช้เฉพาะกับ input ที่ไม่ใช่ radio หรือ checkbox */
+input:not([type="radio"]):not([type="checkbox"]),
+select, button {
   font-size: 16px;
   padding: 8px;
   margin: 8px 0;
   width: 100%;
   box-sizing: border-box;
 }
+
 
 .button-container {
   text-align: center;
@@ -36,4 +39,21 @@ footer {
   text-align: center;
   font-size: 12px;
   padding: 50px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.radio-option input[type="radio"] {
+  margin-right: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.model1{
+  margin-bottom: 10px;
 }
