@@ -54,6 +54,8 @@ function calculate() {
   const finalResult1 = Math.round(numPlates1);
 
   if (finalResult < 0) {
+    document.getElementById("model").innerText =
+      "ค่า L ที่ใช้ในการคำนวณ : " + modelL.toFixed(3) + " μH";
     document.getElementById("result").innerText =
       "ค่าที่ 85% : ค่าที่ได้ต่ำกว่าค่ามาตรฐาน " + finalResult + " mm (" + numPlates.toFixed(2) + " mm)";
     document.getElementById("result1").innerText =
