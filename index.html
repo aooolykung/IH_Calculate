@@ -12,20 +12,21 @@
   <h1></h1>
 
   <label for="model">เลือกรุ่น เครื่องจักร:</label>
-  <form>
-    <div class="radio-option">
-      <input type="radio" name="choice" value="27.270" onclick="hideOther()">
-      <label for="choice1">รุ่น IH30A 27.270 μH</label>
-    </div>
-    <div class="radio-option">
-        <input type="radio" name="choice" value="25.530" onclick="hideOther()"> 
-        <label for="choice2">รุ่น IH30AS 25.530 μH</label>
-    </div>
-    <div class="radio-option">
-      <input type="radio" name="choice" value="other" onclick="showOther()"> อื่นๆ (ใส่ตัวเลขที่วัดได้จาก LCR Metter โดยไม่รองแผ่นชิม μH)
-    </div>
-    <input type="number" id="otherInput" name="otherValue" style="display:none;" placeholder="กรอกค่า L เช่น 26.390">
-  </form>
+<form>
+  <div class="radio-option">
+    <input type="radio" id="choice1" name="choice" value="27.270" onclick="hideOther()">
+    <label for="choice1">รุ่น IH30A 27.270 μH</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="choice2" name="choice" value="25.530" onclick="hideOther()"> 
+    <label for="choice2">รุ่น IH30AS 25.530 μH</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="choiceOther" name="choice" value="other" onclick="showOther()">
+    <label for="choiceOther">อื่นๆ (ใส่ตัวเลขที่วัดได้จาก LCR Meter โดยไม่รองแผ่นชิม μH)</label>
+  </div>
+  <input type="number" id="otherInput" name="otherValue" style="display:none;" placeholder="กรอกค่า L เช่น 26.390">
+</form>
 
 
   <label for="freq">ความถี่จากกล่อง F (kHz):</label>

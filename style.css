@@ -48,12 +48,31 @@ footer {
   margin-bottom: 10px;
 }
 
-.radio-option input[type="radio"] {
-  margin-right: 8px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 
 .model1{
   margin-bottom: 10px;
 }
+
+.radio-option input[type="radio"] {
+  margin-right: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: 1;
+}
+
+.radio-option label {
+  display: inline-block;
+  padding: 5px 5px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/*
+.radio-option input[type="radio"]:checked + label {
+  background-color: #007bff;
+  color: black;
+  border-color: #007bff;
+}
+
+*/
